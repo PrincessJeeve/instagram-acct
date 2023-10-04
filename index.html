@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            font-size: 20px;
+        }
+        #message {
+            display: none;
+        }
+        #no-button {
+            padding: 20px;
+            background-color: red;
+            color: whitesmoke;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #yes-button {
+            background-color: green;
+            color: whitesmoke;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Follow mo na ako sa INSTAGRAM</h1>
+    <button id="yes-button">Yes</button>
+    <button id="no-button">No</button>
+    <div id="message">
+        <p>yieeeehhh ayos nice one!! here's my Instagram account <a href="https://www.instagram.com/jeeve.lane/" target="_blank">@jeeve.lane</a>.</p>
+        <img src="https://i.pinimg.com/originals/0d/34/32/0d34322d6e466c2f9815211e25320f22.gif" alt="Crush's Picture">
+    </div>
+    <script>
+        const yesButton = document.getElementById('yes-button');
+        const noButton = document.getElementById('no-button');
+        const message = document.getElementById('message');
+        const maxX = window.innerWidth - noButton.clientWidth;
+        const maxY = window.innerHeight - noButton.clientHeight;
+
+        noButton.addEventListener('click', () => {
+            moveNoButton();
+        });
+
+        yesButton.addEventListener('click', () => {
+            message.style.display = 'block';
+            noButton.style.display = 'none';
+        });
+
+        function moveNoButton() {
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+            noButton.style.left = randomX + 'px';
+            noButton.style.top = randomY + 'px';
+        }
+    </script>
+</body>
+</html>
